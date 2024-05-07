@@ -1,6 +1,7 @@
 # Light-Up-Puzzle-Game
 Light Up! is a grid-based puzzle game where your objective is to place light bulbs strategically on the board to illuminate it fully. The challenge lies in adhering to the rules and solving each puzzle with precision.
-## Website Link:  https://raptor764.github.io/lightup.github.io/
+## Website Link:  
+https://raptor764.github.io/lightup.github.io/
 ## Objective:
 The goal of the light up puzzle game is to place light bulbs in the white cells according to the rules, so all of the white cells are illuminated.
 ## Rules of the Game:
