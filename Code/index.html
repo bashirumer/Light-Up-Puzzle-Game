@@ -1,0 +1,81 @@
+<!-- The DOCTYPE declaration defines the document type and version of HTML being used -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Set character encoding for the document -->
+  <meta charset="UTF-8" />
+  <!-- Link to an external stylesheet for styling -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Configure the viewport for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Set the title of the HTML document -->
+  <title>Light Up Board Game</title>
+</head>
+
+<body>
+  <!-- Game title -->
+  <div class="sign">
+    <h1>Light Up!</h1>
+  </div>
+
+  <!-- Container for glass circles -->
+  <div id="circles-container">
+    <!-- Individual glass circles with different classes for styling -->
+    <div class="glass-circle1"></div>
+    <div class="glass-circle2"></div>
+    <div class="glass-circle3"></div>
+    <div class="glass-circle4"></div>
+    <div class="glass-circle5"></div>
+  </div>
+
+  <!-- Game board -->
+  <div id="board"></div>
+
+  <!-- Overlay for result with a click event to hide the result -->
+  <div id="overlay2" onclick="hideResult()"></div>
+  <!-- Result overlay container -->
+  <div id="resultOverlay">
+    <!-- Result message container -->
+    <div id="resultMessage"></div>
+  </div>
+
+  <!-- Buttons for game actions with corresponding JavaScript functions -->
+  <button class="button1" onclick="resetBoard()">Reset Board</button>
+  <button class="button2" onclick="choosePuzzle()">New Puzzle</button>
+  <button class="button3" onclick="showRules()">Rules</button>
+  <button class="button4" onclick="checkSolution()">Done</button>
+
+  <!-- Container for displaying the game result -->
+  <div id="result"></div>
+
+  <!-- Overlay for additional information -->
+  <div id="overlay"></div>
+
+  <!-- Popup for game rules -->
+  <div id="rulesPopup">
+    <h2>Light Up Game Rules</h2>
+    <!-- Rules of the game -->
+    <p>
+      The goal of the Light Up puzzle game is to place light bulbs in the white cells according to the rules,
+      so all the white cells are illuminated. <br />
+      <br /> Rules of the Game: <br />
+      <br />
+      <!-- Ordered list of game rules -->
+      <ol type="1">
+        <li>Light bulbs can only be placed on the white cells.</li>
+        <li>A purple cell can only have a maximum of 4 neighbors (up/down, left/right).</li>
+        <li>The number in a purple cell indicates how many light bulbs are in that cell.</li>
+        <li>A bulb sends rays of light horizontally and vertically, illuminating its entire row and column unless its light is blocked by a purple cell.</li>
+        <li>A cell with a 4 must have four bulbs around it, one on each side, and a cell with a 0 cannot have a bulb next to any of its sides.</li>
+        <li>An unnumbered purple cell may have any number of light bulbs adjacent to it or none.</li>
+      </ol>
+      <!-- Button to close the rules popup -->
+      <button id="okButton" onclick="hideRules()">OK</button>
+  </div>
+
+  <!-- Include the JavaScript file for the game logic -->
+  <script src="script.js"></script>
+</body>
+
+</html>

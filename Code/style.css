@@ -1,0 +1,585 @@
+/* Overall styling for the body */
+body {
+  font-family: "VT323", monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: linear-gradient(to bottom right, #7071e8, rgb(136, 60, 203));
+  overflow: scroll;
+  min-height: 130vh;
+}
+/* Styling for a neon sign */
+.sign {
+  text-align: center;
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.sign h1 {
+  font-size: 3rem;
+  color: #fdd835;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  text-shadow: 0 0 10px rgba(253, 216, 53, 0.9),
+    0 0 20px rgba(253, 216, 53, 0.9), 0 0 30px rgba(253, 216, 53, 0.9);
+  animation: neon-flashing 1s infinite alternate;
+  top: 1%;
+}
+/* Animation for neon flashing effect */
+@keyframes neon-flashing {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+/* Container for the board */
+#container {
+  display: flex;
+  align-items: flex-start;
+}
+/* Styling for the game board */
+#board {
+  display: grid;
+  grid-template-columns: repeat(10, 50px);
+  gap: 5px;
+  margin-right: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeInBoard 1s ease-out forwards;
+  border-radius: 5px;
+  position: static; 
+  top: 30%;
+  left: 12%;
+}
+/* Animation for fading in the board */
+@keyframes fadeInBoard {
+  to {
+    opacity: 1;
+  }
+}
+/* Styling for individual cells on the board */
+.cell {
+  width: 50px;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  opacity: 0;
+  animation: fadeInCell 1s ease-out forwards;
+}
+/* Animation for fading in individual cells */
+@keyframes fadeInCell {
+  to {
+    opacity: 1;
+  }
+}
+/* Hover effect for cells */
+.cell:hover {
+  background-color: rgb(86, 39, 137);
+  transform: scale(1.05);
+}
+/* Styling for cells with light */
+.cell.light {
+  background-image: url("bulb.png");
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* Styling for walls */
+.wall {
+  background-color: rgb(119, 64, 178);
+}
+/* Styling for numbered walls */
+.numbered-wall {
+  background-color: rgb(119, 64, 178);
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  user-select: none;
+}
+/* Container for buttons */
+#buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+/* Styling for buttons */
+.button1 {
+  margin-bottom: 15px;
+  font-family: "VT323", monospace;
+  padding: 15px;
+  width: 300px;
+  font-size: 16px;
+  cursor: pointer;
+  background: rgb(86, 39, 137);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  position: fixed;
+  top: 25%;
+  right: 3%;
+}
+/* Styling for buttons */
+.button2 {
+  margin-bottom: 15px;
+  font-family: "VT323", monospace;
+  padding: 15px;
+  width: 300px;
+  font-size: 16px;
+  cursor: pointer;
+  background: rgb(86, 39, 137);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  position: fixed;
+  top: 40%;
+  right: 3%;
+}
+/* Styling for buttons */
+.button3 {
+  margin-bottom: 15px;
+  font-family: "VT323", monospace;
+  padding: 15px;
+  width: 300px;
+  font-size: 16px;
+  cursor: pointer;
+  background: rgb(86, 39, 137);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  position: fixed;
+  top: 55%;
+  right: 3%;
+}
+/* Styling for buttons */
+.button4 {
+  margin-bottom: 15px;
+  font-family: "VT323", monospace;
+  padding: 15px;
+  width: 300px;
+  font-size: 16px;
+  cursor: pointer;
+  background: rgb(86, 39, 137);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  position: fixed;
+  top: 70%;
+  right: 3%;
+}
+/* Button hover effect */
+.button1:hover {
+  background: rgb(124, 60, 194);
+  transform: scale(1.05);
+}
+/* Button hover effect */
+.button2:hover {
+  background: rgb(124, 60, 194);
+  transform: scale(1.05);
+}
+/* Button hover effect */
+.button3:hover {
+  background: rgb(124, 60, 194);
+  transform: scale(1.05);
+}
+/* Button hover effect */
+.button4:hover {
+  background: rgb(124, 60, 194);
+  transform: scale(1.05);
+}
+
+/* Popup for game rules */
+#rulesPopup {
+  display: none;
+  position: fixed;
+  color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #7071e8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+  border-radius: 5px;
+}
+/* Animation for fading in the rules popup */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+#rulesPopup.close {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+/* Animation for fading out */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+/* Overlay for the game */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+/* Overlay for game result */
+#resultOverlay {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+/* Animation for fading in the result overlay */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Styling for the result message */
+#resultMessage {
+  padding: 20px;
+  font-size: 40px;
+  color: #fff;
+}
+/* Styling for the "OK" button */
+#okButton {
+  margin-top: 10px;
+  font-family: "VT323", monospace;
+  padding: 8px 16px;
+  background: rgb(93, 37, 153);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+/* Button hover effect */
+#okButton:hover {
+  background: rgb(86, 39, 137);
+  transform: scale(1.05);
+}
+/* Container for animated circles */
+#circles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+/* Container for animated circles */
+#circles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+/* Styling for animated glass circles */
+.glass-circle1 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  animation: float1 10s infinite alternate ease-in-out,
+    moveAround1 25s infinite linear, bumpIntoOthers 10s infinite linear;
+  filter: blur(3px);
+}
+/* Styling for animated glass circles */
+.glass-circle2 {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  animation: float2 10s infinite alternate ease-in-out,
+    moveAround2 18s infinite linear, bumpIntoOthers 10s infinite linear;
+  filter: blur(3px);
+}
+/* Styling for animated glass circles */
+.glass-circle3 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 60%;
+  animation: float3 10s infinite alternate ease-in-out,
+    moveAround3 20s infinite linear, bumpIntoOthers 10s infinite linear;
+  filter: blur(3px);
+}
+/* Styling for animated glass circles */
+.glass-circle4 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  animation: float4 10s infinite alternate ease-in-out,
+    moveAround4 30s infinite linear, bumpIntoOthers 10s infinite linear;
+  filter: blur(3px);
+}
+/* Styling for animated glass circles */
+.glass-circle5 {
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 50%;
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  animation: float5 10s infinite alternate ease-in-out,
+    moveAround5 21s infinite linear, bumpIntoOthers 10s infinite linear;
+  filter: blur(3px);
+}
+/* Animation for floating effect */
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+}
+/* Animation for floating effect */
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -8px);
+  }
+}
+/* Animation for floating effect */
+@keyframes float3 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -12px);
+  }
+}
+/* Animation for floating effect */
+@keyframes float4 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -15px);
+  }
+}
+/* Animation for floating effect */
+@keyframes float5 {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -13px);
+  }
+}
+/* Animation for floating effect */
+@keyframes moveAround1 {
+  0% {
+    top: 2%;
+    left: 2%;
+  }
+  25% {
+    top: 50%;
+    left: 50%;
+  }
+  50% {
+    top: 2%;
+    left: 98%;
+  }
+  75% {
+    top: 50%;
+    left: 50%;
+  }
+  100% {
+    top: 2%;
+    left: 2%;
+  }
+}
+/* Animation for floating effect */
+@keyframes moveAround2 {
+  0% {
+    top: 70%;
+    left: 60%;
+  }
+  25% {
+    top: 30%;
+    left: 30%;
+  }
+  50% {
+    top: 70%;
+    left: 60%;
+  }
+  75% {
+    top: 30%;
+    left: 30%;
+  }
+  100% {
+    top: 70%;
+    left: 60%;
+  }
+}
+@keyframes moveAround3 {
+  0% {
+    top: 10%;
+    left: 60%;
+  }
+  25% {
+    top: 90%;
+    left: 10%;
+  }
+  50% {
+    top: 10%;
+    left: 60%;
+  }
+  75% {
+    top: 90%;
+    left: 10%;
+  }
+  100% {
+    top: 10%;
+    left: 60%;
+  }
+}
+/* Animation for floating effect */
+@keyframes moveAround4 {
+  0% {
+    top: 30%;
+    left: 80%;
+  }
+  25% {
+    top: 70%;
+    left: 30%;
+  }
+  50% {
+    top: 30%;
+    left: 80%;
+  }
+  75% {
+    top: 70%;
+    left: 30%;
+  }
+  100% {
+    top: 30%;
+    left: 80%;
+  }
+}
+/* Animation for floating effect */
+@keyframes moveAround5 {
+  0% {
+    top: 80%;
+    left: 80%;
+  }
+  25% {
+    top: 20%;
+    left: 20%;
+  }
+  50% {
+    top: 80%;
+    left: 80%;
+  }
+  75% {
+    top: 20%;
+    left: 20%;
+  }
+  100% {
+    top: 80%;
+    left: 80%;
+  }
+}
+/* Animation for floating effect */
+@keyframes bumpIntoOthers {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(5px, 5px);
+  }
+  50% {
+    transform: translate(-5px, -5px);
+  }
+  75% {
+    transform: translate(5px, 5px);
+  }
+}
